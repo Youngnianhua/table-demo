@@ -3,7 +3,8 @@
     <div class="nav">
       <h1>Table</h1>
       <p>
-        这是一款多功能表格，有搜索、筛选、排序、分页、新增、删除、编辑（表格行内编辑）、详情（跳转到详情页面）及render函数的用法
+        这是一款多功能表格，有搜索、筛选、排序、分页、新增、删除、编辑（表格行内编辑）、详情（跳转到详情页面）及render函数的用法。
+        注意：搜索和新增是针对整个列表数据来操作的，而不是针对当前页面来操作
       </p>
     </div>
     <div class="content">
@@ -277,7 +278,7 @@ export default {
           slot: 'action',
           minWidth: 80,
         }
-      ],
+      ], //表头
       tableData: [
         {
           id:1,
@@ -569,22 +570,19 @@ export default {
           status:0,
           treatment:0
         },
-      ],
-      deviceData:[],
+      ],  //后台数据
+      deviceData:[],  //表格data
       deviceDataCopy:[],//表格所有信息副本
       searchKey:'',//搜索关键字
-      // 初始化信息总条数
-      dataCount:0,
-      // 每页显示多少条
-      pageSize:10,
-      current:1,
-      addModal:false,
-      formCustom: {
+      dataCount:0,// 初始化信息总条数
+      pageSize:10,// 每页显示多少条
+      current:1,  //当前页码
+      addModal:false,  //新增模态框
+      formCustom: {    //新增模态框表单
         organName: '',
         customerName: '',
       },
-      // 按钮的禁用状态
-      saveDisable: false,
+      saveDisable: false,  // 按钮的禁用状态
     }
   },
   methods:{
@@ -596,9 +594,9 @@ export default {
     },
     // 搜索
     searchDevice(){
-      let deviceArr = this.deviceDataCopy;
+      let deviceArr = this.deviceDataCopy;   //表格信息副本数组
       let searchArr = [];
-      let key = this.searchKey;
+      let key = this.searchKey;  //搜索关键字
       if (key === ''){
         this.deviceData = this.deviceDataCopy;
         return;
