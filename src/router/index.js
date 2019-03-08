@@ -10,6 +10,13 @@ export default new Router({
       path: '/',
       name: 'HelloWorld',
       component: HelloWorld
+    },
+    {
+      path: '/list',
+      name: 'List',
+      component: resolve => {
+        require(['@/components/list'], resolve)
+      }
     }
   ]
 })

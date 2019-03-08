@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <div class="nav">
-      <h2>Table</h2>
+      <h1>Table</h1>
       <p>
         这是一款多功能表格，有搜索、筛选、排序、分页、新增、删除、编辑（表格行内编辑）、详情（跳转到详情页面）及render函数的用法
       </p>
